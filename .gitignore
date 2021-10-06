@@ -1,0 +1,5 @@
+manage.py
+/media
+/fileserver/settings.py
+/migrations
+db*.*

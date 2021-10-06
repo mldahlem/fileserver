@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h1>Dudis Database HomeServer</h1>
+        {% if user.is_anonymous %}
+            <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+
+        {% else %}
+            <div class="alert alert-primary" role="alert">
+                Seja bem-vindo(a) {{ user.get_full_name }}!
+            </div>
+            <br>
+            <br>
+                <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/core/items/">Itens</a>
+                <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/core/items/add/">Adicionar Item</a>
+                <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/core/categorias/">Categorias</a>
+                <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/core/categorias/add">Adicionar Categoria</a>
+            <br>
+            <br>
+            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+
+        {% endif %}
+    </div>
+
+{% endblock %}
